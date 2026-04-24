@@ -23,7 +23,7 @@ function HomeStack() {
 
 const getTabIcon = (routeName, focused) => {
   switch (routeName) {
-    case "Home":
+    case "Book Catalogue":
       return focused ? "home" : "home-outline";
     case "Search":
       return focused ? "search" : "search-outline";
@@ -45,7 +45,7 @@ export default function AppNavigator() {
           return <Ionicons name={iconName} size={size} color={color} />;
         }
       })}>
-        <Tab.Screen name="Home" component={HomeStack} />
+        <Tab.Screen name="Book Catalogue" component={HomeStack} />
         <Tab.Screen name="Search" component={SearchScreen} />
         <Tab.Screen name="Favorite" component={FavoriteScreen} />
         <Tab.Screen name="About" component={AboutScreen} />
