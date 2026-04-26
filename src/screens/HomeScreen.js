@@ -19,7 +19,7 @@ export default function HomeScreen({ navigation }) {
   const fetchBooks = async () => {
     try {
       setError(false);
-      const response = await fetch('https://openlibrary.org/search.json?q=fiction&limit=10');
+      const response = await fetch('https://openlibrary.org/search.json?q=fiction&limit=100');
       const json = await response.json();
       setBooks(json.docs);
     } catch (err) {
@@ -76,7 +76,7 @@ export default function HomeScreen({ navigation }) {
               source={{ 
                 uri: item.cover_i 
                   ? `https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg` 
-                  : 'https://via.placeholder.com/150' 
+                  : undefined
               }} 
               style={styles.cover} 
             />
