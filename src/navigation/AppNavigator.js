@@ -14,16 +14,34 @@ const Stack = createNativeStackNavigator();
 
 function HomeStack() {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="DetailScreen" component={DetailScreen} />
+    <Stack.Navigator>
+      <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ title: "Book Catalogue" }} />
+      <Stack.Screen name="DetailScreen" component={DetailScreen} options={{ title: "Detail Buku" }} />
+    </Stack.Navigator>
+  );
+}
+
+function SearchStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="SearchScreen" component={SearchScreen} options={{ title: "Cari Buku" }} />
+      <Stack.Screen name="DetailScreen" component={DetailScreen} options={{ title: "Detail Buku" }} />
+    </Stack.Navigator>
+  );
+}
+
+function FavoriteStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="FavoriteScreen" component={FavoriteScreen} options={{ title: "Buku Favorit" }} />
+      <Stack.Screen name="DetailScreen" component={DetailScreen} options={{ title: "Detail Buku" }} />
     </Stack.Navigator>
   );
 }
 
 const getTabIcon = (routeName, focused) => {
   switch (routeName) {
-    case "Book Catalogue":
+    case "Home":
       return focused ? "home" : "home-outline";
     case "Search":
       return focused ? "search" : "search-outline";
@@ -35,20 +53,26 @@ const getTabIcon = (routeName, focused) => {
       return "ellipse"; 
   }
 };
+
 export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Tab.Navigator 
-      screenOptions={({  route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
-          const iconName = getTabIcon(route.name, focused);
-          return <Ionicons name={iconName} size={size} color={color} />;
-        }
-      })}>
-        <Tab.Screen name="Book Catalogue" component={HomeStack} />
-        <Tab.Screen name="Search" component={SearchScreen} />
-        <Tab.Screen name="Favorite" component={FavoriteScreen} />
-        <Tab.Screen name="About" component={AboutScreen} />
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            const iconName = getTabIcon(route.name, focused);
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: '#4CAF50',
+          tabBarInactiveTintColor: 'gray',
+          headerShown: false
+        })}
+      >
+        <Tab.Screen name="Home" component={HomeStack} />
+        <Tab.Screen name="Search" component={SearchStack} />
+        <Tab.Screen name="Favorite" component={FavoriteStack} />
+        <Tab.Screen name="About" component={AboutScreen} options={{ headerShown: true }} 
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
