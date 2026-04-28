@@ -34,8 +34,8 @@ export default function FavoriteScreen() {
             <Image
               source={{ 
                 uri: item.cover_i 
-                  ? `https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg` 
-                  : undefined 
+                  ? `https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`
+                  : `https://covers.openlibrary.org/b/id/${item.cover_id}-M.jpg`
               }}
               style={styles.cover}
             />

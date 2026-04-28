@@ -56,7 +56,7 @@ const DetailScreen = ({ route }) => {
         <Text style={styles.txtInfo}>Genre: {subjekBuku}</Text>
         <View style={styles.garis} />
 
-        <Text style={styles.sub}>Tentang Buku:</Text>
+        <Text style={styles.sub}>Sinopsis:</Text>
         <Text style={styles.txt}>{deskripsi()}</Text>
 
         <Text style={styles.txtInfo}>Terbit: {book.first_publish_year || '-'}</Text>
