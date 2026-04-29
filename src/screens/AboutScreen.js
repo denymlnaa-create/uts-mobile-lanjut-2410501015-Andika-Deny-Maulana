@@ -1,41 +1,60 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
 export default function AboutScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Profil Pengembang</Text>
-
-      <View style={styles.card}>
-        <Text style={styles.info}>Nama: Andika Deny Maulana</Text>
-        <Text style={styles.info}>NIM: 2410501015</Text>
-        <Text style={styles.info}>Prodi: D3 Sistem Informasi</Text>
+    <View style={styles.main}> 
+      <Text style={styles.title}>Profil</Text>
+      
+      <View style={styles.content}>
+        <Image 
+          source={require('../../assets/profil.png')} 
+          style={styles.img} 
+        />
+        
+        <View style={styles.box}>
+          <Text style={styles.txt}>Nama: Andika Deny Maulana</Text>
+          <Text style={styles.txt}>NIM: 2410501015</Text>
+          <Text style={styles.txt}>Kelas:B</Text>
+          <Text style={styles.txt}>Tema: BookShelf</Text>
+          <Text style={styles.txt}>API: openlibrary.org</Text>
+        </View>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  main: {
     flex: 1,
-    padding: 20,
-    backgroundColor: '#f5f5f5',
-    justifyContent: 'center',
+    backgroundColor: '#eee',
+    paddingTop: 60,
   },
-  header: {
+  title: {
     fontSize: 22,
     fontWeight: 'bold',
     textAlign: 'center',
+    marginBottom: 30,
+  },
+  content: {
+    alignItems: 'center',
+  },
+  img: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
     marginBottom: 20,
   },
-  card: {
+  box: {
     backgroundColor: '#fff',
     padding: 20,
     borderRadius: 10,
-    elevation: 3,
+    width: '80%',
+    borderWidth: 1,
+    borderColor: '#ccc',
   },
-  info: {
+  txt: {
     fontSize: 16,
-    marginBottom: 10,
+    marginVertical: 4,
   },
 });
