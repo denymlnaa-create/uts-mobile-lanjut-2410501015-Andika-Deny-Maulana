@@ -22,8 +22,8 @@ Cara Install dan Run
 - buat folder
 - buka command prompt
 - cd (nama folder yg dibuat)
-- Clone Repository
-  git clone [https://github.com/denymlnaa-create/uts-mobile-lanjut-2410501015-Andika-Deny-Maulana.git]
+- Clone Repository :
+  git clone https://github.com/denymlnaa-create/uts-mobile-lanjut-2410501015-Andika-Deny-Maulana.git
 - cd uts-mobile-lanjut-2410501015-Andika-Deny-Maulana
 - Install Node Module :
   npm install
