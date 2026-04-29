@@ -19,8 +19,12 @@ Tech Stack
 
 
 Cara Install dan Run
+- buat folder
+- buka command prompt
+- cd (nama folder yg dibuat)
 - Clone Repository
   git clone [https://github.com/denymlnaa-create/uts-mobile-lanjut-2410501015-Andika-Deny-Maulana.git]
+- cd uts-mobile-lanjut-2410501015-Andika-Deny-Maulana
 - Install Node Module :
   npm install
 - Jalankan Project :
@@ -71,3 +75,5 @@ Saat mengerjakan project UTS BookShelf ini, jujur saya dapet banyak banget penga
 Selain itu, ada juga bug yang lumayan mengganggu di Favorite Screen, di mana gambar cover buku sempet nggak muncul pas sudah disimpan. Ternyata ini karena perbedaan penamaan properti ID cover antara data dari hasil pencarian dan data trending. Saya harus benerin logika pemanggilan URL gambarnya supaya bisa nanganin berbagai kondisi properti gambar yang berbeda.
 
 Di dalam pengerjaan projek ini saya belajar kalai pakai Context API dan useReducer itu jauh lebih enak buat ngelola data global kayak fitur favorit. Kode jadi nggak berantakan karena nggak perlu oper-oper data antar komponen (prop drilling), dan logikanya jadi lebih terpusat.
+
+Selain itu, saya juga sempat mendapatkan notifikasi di vs code bahwa package.json corrupt, sehingga saya mencari berbagai cara untuk mengatasi hal tersebut, dan saya pun akhirnya memutuskan untuk menambahkan depedency agar bisa di commit ke github walaupun dependency tersebut tidak diperlukan.
