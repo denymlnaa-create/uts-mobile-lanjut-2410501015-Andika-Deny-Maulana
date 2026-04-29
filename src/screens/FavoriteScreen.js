@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { AppContext } from '../context/Context'; 
 
-export default function FavoriteScreen() {
+export default function FavoriteScreen({ navigation }) {
   const { state, dispatch } = useContext(AppContext);
 
   const handleRemove = (key) => {
@@ -30,7 +30,12 @@ export default function FavoriteScreen() {
         data={state.favorites}
         keyExtractor={(item) => item.key}
         renderItem={({ item }) => (
-          <View style={styles.card}>
+          <TouchableOpacity
+            style={styles.card}
+            onPress={() => navigation.navigate('DetailScreen', { book: item })}
+          >
+         
+            
             <Image
               source={{ 
                 uri: item.cover_i 
@@ -52,7 +57,7 @@ export default function FavoriteScreen() {
                 <Text style={styles.removeBtnText}>Hapus dari Favorit</Text>
               </TouchableOpacity>
             </View>
-          </View>
+          </TouchableOpacity>
         )}
       />
     </View>
