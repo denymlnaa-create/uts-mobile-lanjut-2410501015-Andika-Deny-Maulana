@@ -34,23 +34,24 @@ Cara Install dan Run
 Screenshots
 
 Home Screen
-![Home](./Screenshots/HomeScreen.jpeg)
+![Home](./Screenshots/HomeScreen.png)
 
 Search Screen
-![Search](./Screenshots/SearchScreen.jpeg)
+![Search](./Screenshots/SearchScreen.png)
 
 Detail Screen
-![Detail](./Screenshots/DetailScreen.jpeg)
+![Detail](./Screenshots/DetailScreen.png)
 
 Favorite Screen
-![Favorite](./Screenshots/FavoriteScreen.jpeg)
+![Favorite](./Screenshots/FavoriteScreen.png)
 
 About Screen
-![About](./Screenshots/AboutScreen.jpeg)
+![About](./Screenshots/AboutScreen.png)
 
 
 Link Video :
-[text](https://drive.google.com/drive/folders/1cjJ3Ol3muXvMTPKhd-mSEP3izyJ9Kwa7)
+https://drive.google.com/drive/folders/1cjJ3Ol3muXvMTPKhd-mSEP3izyJ9Kwa7
+
 
 
 State Management & Justifikasi
