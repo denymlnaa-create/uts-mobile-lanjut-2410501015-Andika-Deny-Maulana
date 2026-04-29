@@ -20,16 +20,21 @@ export default function HomeScreen({ navigation }) {
   const [error, setError] = useState(false);
 
   const fetchData = async () => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
     try {
+      setLoading(true);
       setError(false);
       const [resTrending, resSubject] = await Promise.all([
-        fetch('https://openlibrary.org/trending/daily.json?limit=10'),
-        fetch(`https://openlibrary.org/subjects/${activeSubject}.json?limit=15`)
+        fetch('https://openlibrary.org/trending/daily.json?limit=10', { signal: controller.signal }),
+        fetch(`https://openlibrary.org/subjects/${activeSubject}.json?limit=15`, { signal: controller.signal })
       ]);
       
       const dataTrending = await resTrending.json();
       const dataSubject = await resSubject.json();
       
+      clearTimeout(timeoutId);
+
       const normalizedTrending = dataTrending.works.map(book => ({
         ...book,
         author_name: book.author_name || ['Anonim'],
@@ -44,6 +49,7 @@ export default function HomeScreen({ navigation }) {
       setTrending(normalizedTrending);
       setSubjectBooks(normalizedSubject);
     } catch (err) {
+      console.log("Error fetching data:",err.name);
       setError(true);
     } finally {
       setLoading(false);
