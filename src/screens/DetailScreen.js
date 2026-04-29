@@ -34,7 +34,7 @@ const DetailScreen = ({ route }) => {
     (book.subject && book.subject.length > 0) ? book.subject.slice(0, 3).join(', ') : 
   (book.subjects && book.subjects.length > 0) ? book.subjects.slice(0, 3).join(', ') :
   (data?.subjects && data.subjects.length > 0) ? data.subjects.slice(0, 3).join(', ') : 
-  'General Fiction';
+  'General';
   const deskripsi = () => {
     if (!data?.description) return 'Tidak ada deskripsi.';
     return typeof data.description === 'string' ? data.description : data.description.value;
