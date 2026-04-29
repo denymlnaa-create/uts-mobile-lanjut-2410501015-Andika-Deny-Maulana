@@ -30,7 +30,11 @@ const DetailScreen = ({ route }) => {
     ? `https://covers.openlibrary.org/b/id/${book.cover_i || book.cover_id}-L.jpg`
     : `undefined`;
 
-    const subjekBuku = book.subject ? book.subject.slice(0, 3).join(', ') : '-';
+    const subjekBuku = 
+    (book.subject && book.subject.length > 0) ? book.subject.slice(0, 3).join(', ') : 
+  (book.subjects && book.subjects.length > 0) ? book.subjects.slice(0, 3).join(', ') :
+  (data?.subjects && data.subjects.length > 0) ? data.subjects.slice(0, 3).join(', ') : 
+  'General Fiction';
   const deskripsi = () => {
     if (!data?.description) return 'Tidak ada deskripsi.';
     return typeof data.description === 'string' ? data.description : data.description.value;
